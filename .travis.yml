@@ -1,0 +1,24 @@
+language: node_js
+node_js:
+  - "11"
+dist: trusty
+sudo: required
+
+branches:
+  only:
+  - master
+
+before_script:
+  - npm install -g @angular/cli
+
+script:
+- ng lint
+- ng build --prod --base-href https://mark-broadhurst.github.io/MBroadhurst.com/
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: dist/mbroadhurst
+  on:
+    branch: master
