@@ -13,12 +13,12 @@ before_script:
 
 script:
 - ng lint
-- ng build --prod --base-href https://mark-broadhurst.github.io/MBroadhurst.com/
+- ng build --prod --base-href https://mark-broadhurst.github.io/markbroadhurstconsulting/
 
 deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
-  local_dir: dist/mbroadhurst
+  local_dir: dist/markbroadhurstconsulting
   on:
     branch: master
